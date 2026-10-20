@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Abiha Syed, Computer Science student exploring cloud computing, artificial intelligence, quantum computing, and cybersecurity.">
+  <title>Abiha Syed | Computer Science Portfolio</title>
+
+  <style>
+    :root {
+      --cream: #f8f4ed;
+      --white: #fffdf9;
+      --brown: #604638;
+      --dark: #2f2925;
+      --muted: #766c64;
+      --border: #e7ddd2;
+      --accent: #a8795d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--brown);
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--brown);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 68px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .hero {
+      padding: 100px 0 88px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.12;
+      margin: 18px 0;
+      color: var(--brown);
+    }
+
+    h2 {
+      color: var(--brown);
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      color: var(--brown);
+    }
+
+    .hero p,
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 7px;
+      border: 1px solid var(--brown);
+      background: var(--brown);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--brown);
+    }
+
+    .section-white {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .section-white .card {
+      background: var(--cream);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eee3d8;
+      color: var(--brown);
+      border-radius: 20px;
+      padding: 4px 10px;
+      margin: 10px 4px 0 0;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 12px;
+      color: var(--brown);
+    }
+
+    .text-link {
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 68px 0;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">UmeAbiha</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#research">Research Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <p class="eyebrow">Computer Science Student · Lifelong Learner</p>
+      <h1>Hi, I'm Abiha Syed.</h1>
+      <p>
+        I am a Computer Science student building my foundation in cloud
+        computing and artificial intelligence, while exploring quantum
+        computing and cybersecurity. I enjoy learning how emerging
+        technologies can be applied to meaningful real-world problems.
+      </p>
+      <div class="buttons">
+        <a class="button" href="#projects">Explore My Work</a>
+        <a class="button secondary"
+           href="https://github.com/Abihasyed05"
+           target="_blank" rel="noopener noreferrer">
+          Visit GitHub
+        </a>
+      </div>
+    </section>
+
+    <section class="section-white" id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p class="intro">
+          I am pursuing a Bachelor of Science in Computer Science at the
+          University of Azad Jammu and Kashmir, with an expected graduation
+          year of 2027. Alongside my university studies, I am developing
+          practical technical skills through structured learning and
+          hands-on exercises.
+        </p>
+        <p class="intro" style="margin-top: 14px;">
+          My interests include cloud technologies, artificial intelligence,
+          machine learning, quantum computing, and cybersecurity. I aim to
+          strengthen my programming and research skills, create useful
+          projects, and continue growing as a technology professional.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2>Education & Training</h2>
+        <p class="intro">
+          My academic background and completed learning experiences.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="meta">
+              University of Azad Jammu and Kashmir · 2023–2027
+            </p>
+            <p>
+              Undergraduate study in computer science, programming,
+              algorithms, and emerging computing technologies.
+            </p>
+            <span class="tag">In progress</span>
+          </article>
+
+          <article class="card">
+            <h3>Artificial Intelligence Training</h3>
+            <p class="meta">Microsoft · 2025</p>
+            <p>
+              Completed AI-related learning through a Microsoft course
+              in 2025. The exact official course title and credential
+              details can be added after verification.
+            </p>
+            <span class="tag">Completed training</span>
+          </article>
+
+          <article class="card">
+            <h3>AWS & Cloud Computing Learning</h3>
+            <p class="meta">Practical learning and training</p>
+            <p>
+              Developing familiarity with AWS services through guided
+              exercises and cloud-based project work.
+            </p>
+            <span class="tag">Learning & practice</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white" id="skills">
+      <div class="container">
+        <h2>Technical Skills</h2>
+        <p class="intro">
+          Areas I am learning, practising, or developing through my
+          academic work and personal projects.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Cloud Computing</h3>
+            <p>
+              AWS fundamentals, Amazon S3, Amazon EC2, DynamoDB, and
+              cloud-based architecture concepts.
+            </p>
+            <span class="tag">Developing</span>
+          </article>
+
+          <article class="card">
+            <h3>Artificial Intelligence</h3>
+            <p>
+              Completed Microsoft AI-related training; currently
+              building further understanding of AI and machine learning.
+            </p>
+            <span class="tag">Foundational learning</span>
+          </article>
+
+          <article class="card">
+            <h3>Programming</h3>
+            <p>
+              C++ and Python fundamentals, with a focus on strengthening
+              programming logic and problem-solving.
+            </p>
+            <span class="tag">Learning</span>
+          </article>
+
+          <article class="card">
+            <h3>Web Development</h3>
+            <p>
+              HTML, CSS, GitHub, and publishing a static website
+              with GitHub Pages.
+            </p>
+            <span class="tag">Building</span>
+          </article>
+
+          <article class="card">
+            <h3>Cybersecurity</h3>
+            <p>
+              An area of professional interest, with foundational
+              concepts and technical skills to develop further.
+            </p>
+            <span class="tag">Developing</span>
+          </article>
+
+          <article class="card">
+            <h3>Data & Analytics</h3>
+            <p>
+              Exploring data organisation, analysis, and visualisation
+              through academic and cloud-project ideas.
+            </p>
+            <span class="tag">Exploring</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2>Research Interests</h2>
+        <p class="intro">
+          I am interested in emerging areas of computing and their
+          potential to address complex problems.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Quantum Computing</h3>
+            <p>
+              Currently learning the fundamental concepts of quantum
+              computing and exploring how this emerging field differs
+              from classical computing.
+            </p>
+            <p>
+              My current focus is concept-building; I am not presenting
+              this as completed research or an implemented quantum project.
+            </p>
+            <span class="status">Status: Learning in progress</span>
+          </article>
+
+          <article class="card">
+            <h3>Artificial Intelligence & Machine Learning</h3>
+            <p>
+              Interested in understanding AI and machine learning
+              techniques and how they can support practical applications.
+            </p>
+            <span class="status">Status: Learning and exploration</span>
+          </article>
+
+          <article class="card">
+            <h3>Cloud Computing & Cybersecurity</h3>
+            <p>
+              Interested in cloud infrastructure, secure systems,
+              and the role of cybersecurity in modern applications.
+            </p>
+            <span class="status">Status: Developing foundations</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white" id="projects">
+      <div class="container">
+        <h2>Projects & Practical Work</h2>
+        <p class="intro">
+          A selection of practical learning and project development.
+          Project status is stated transparently.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>AWS Cloud Labs</h3>
+            <p>
+              Guided practice with AWS services, including EC2,
+              DynamoDB, IAM roles, and a basic Flask application
+              connected to cloud resources.
+            </p>
+            <span class="status">Type: Hands-on learning</span>
+          </article>
+
+          <article class="card">
+            <h3>Pakistan Population Intelligence Platform</h3>
+            <p>
+              A proposed cloud-based analytics platform using Pakistan
+              census data, with planned data storage, querying, and
+              interactive visualisation.
+            </p>
+            <p>
+              Planned technologies include Amazon S3, AWS Glue,
+              Amazon Athena, and a visualisation interface.
+            </p>
+            <span class="status">Status: Project concept / development</span>
+          </article>
+
+          <article class="card">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              A responsive personal website built with HTML and CSS
+              to present my education, technical learning, research
+              interests, and project work.
+            </p>
+            <span class="status">Type: Personal web project</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Let's Connect</h2>
+        <p class="intro">
+          I welcome opportunities to learn, collaborate on meaningful
+          technical projects, and connect with people working in
+          computer science and emerging technologies.
+        </p>
+        <div class="buttons">
+          <a class="button"
+             href="https://github.com/Abihasyed05"
+             target="_blank" rel="noopener noreferrer">
+            GitHub Profile
+          </a>
+        </div>
+        <p class="meta" style="margin-top: 18px;">
+          For now, GitHub is my public contact point. I can add a
+          professional email address here later.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Abiha Syed · UmeAbiha Portfolio</p>
+      <p>Learning with curiosity. Building with purpose.</p>
+    </div>
+  </footer>
+</body>
+</html>
